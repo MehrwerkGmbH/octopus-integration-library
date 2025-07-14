@@ -1,0 +1,16 @@
+name: Maven build and publish
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  push:
+    branches: [ "master" ]
+
+jobs:
+  use-maven-workflow:
+    name: Use maven workflow
+    uses: MehrwerkGmbH/workflows-and-actions/.github/workflows/reusable-maven-workflow.yml@dev
+    secrets: inherit
+    with:
+      skip-quality-gate: true

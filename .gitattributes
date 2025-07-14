@@ -1,0 +1,6 @@
+# Automatically handle line endings for text files on commit and checkout
+* text eol=lf
+
+# Force CRLF line endings for batch files on commit and checkout
+*.bat text eol=crlf
+*.cmd text eol=crlf
