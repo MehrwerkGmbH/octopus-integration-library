@@ -3,6 +3,7 @@ package de.mehrwerk.octopus.axa.model.error;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Represents an error response from the AXA API.
@@ -14,6 +15,7 @@ import lombok.Getter;
  * 400 Bad Request, 401 Unauthorized, 403 Forbidden, 422 Unprocessable Entity and anything else
  */
 @Getter
+@Setter
 public class ErrorDto {
     /**
      * <p>Identifier of the error</p>
