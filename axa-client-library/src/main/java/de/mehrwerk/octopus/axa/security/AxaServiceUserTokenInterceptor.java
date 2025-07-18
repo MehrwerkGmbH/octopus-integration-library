@@ -9,6 +9,7 @@ import org.springframework.http.*;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.util.Set;
  * for the AXA service user token.
  */
 @Slf4j
+@Service
 public class AxaServiceUserTokenInterceptor implements ClientHttpRequestInterceptor {
     private final AxaTokenClient tokenClient;
     private final ObjectMapper objectMapper;
@@ -48,14 +50,8 @@ public class AxaServiceUserTokenInterceptor implements ClientHttpRequestIntercep
     private void addDefaultHeaders(HttpRequest request) {
         HttpHeaders headers = request.getHeaders();
 
-        if (!headers.containsKey(HttpHeaders.CONTENT_TYPE)) {
-            headers.setContentType(MediaType.APPLICATION_JSON);
-        }
-
-        if (!headers.containsKey(HttpHeaders.ACCEPT)) {
-            headers.setAccept(List.of(MediaType.APPLICATION_JSON));
-        }
-
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setAccept(List.of(MediaType.ALL));
         headers.set("x-environment", tokenClient.getXEnvironment());
         headers.set("x-tenant-id", tokenClient.getXTenantId());
     }
@@ -131,10 +127,14 @@ public class AxaServiceUserTokenInterceptor implements ClientHttpRequestIntercep
 
         log.debug("Executing request: {} {}", request.getMethod(), request.getURI());
 
+        log.debug("Request URL: {}", request.getURI());
+        log.debug("Request headers: {}", request.getHeaders());
+        log.debug("Request body: {}", new String(body));
+
         try {
             ClientHttpResponse response = execution.execute(request, body);
 
-            if (ERROR_STATUS_CODES.contains(response.getStatusCode())) {
+            if (!response.getStatusCode().is2xxSuccessful()) {
                 handleErrorResponse(request, response);
             }
 
