@@ -1,5 +1,6 @@
 package de.mehrwerk.octopus.axa.model.cases.home;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import de.mehrwerk.octopus.axa.jackson.annotation.DecimalScale;
 import jakarta.validation.constraints.NotBlank;
@@ -15,6 +16,7 @@ import java.math.BigDecimal;
  */
 @Data
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AnsweredAmountDto {
     /**
      * <p>Amount, numeric, with 2 or 3 decimals.</p>

@@ -1,10 +1,12 @@
 package de.mehrwerk.octopus.axa.model.cases.home;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.mehrwerk.octopus.axa.jackson.deserializer.PolicyHolderDeserializer;
 import jakarta.validation.Valid;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
@@ -16,7 +18,9 @@ import lombok.experimental.Accessors;
  * {@link PolicyEligibilityTokenDto}
  */
 @Getter
+@Setter
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class AbstractPolicyDto {
     /**
      * <p>Information related to the holder of the policy</p>

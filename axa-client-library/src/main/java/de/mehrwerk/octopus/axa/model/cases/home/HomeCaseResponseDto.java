@@ -1,19 +1,23 @@
 package de.mehrwerk.octopus.axa.model.cases.home;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import de.mehrwerk.octopus.axa.jackson.annotation.ValidExclusionReason;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
  * Represents a response DTO for home cases in the AXA system.
  */
 @Getter
+@Setter
 @Accessors(chain = true)
 @ValidExclusionReason
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class HomeCaseResponseDto extends AbstractHomeCaseDto {
     /**
      * <p>Identifier of the case</p>

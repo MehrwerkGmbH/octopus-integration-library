@@ -1,5 +1,6 @@
 package de.mehrwerk.octopus.axa.model.cases.home;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.mehrwerk.octopus.axa.jackson.deserializer.PolicyDeserializer;
@@ -8,6 +9,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.util.List;
@@ -17,8 +19,10 @@ import java.util.List;
  * This class contains common fields for request and response dto.
  */
 @Getter
+@Setter
 @Accessors(chain = true)
 @JsonDeserialize(using = RequestAndResponseDeserializer.class)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class AbstractHomeCaseDto {
     /**
      * <p>List of case origin, first interaction channel.</p>

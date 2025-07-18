@@ -1,16 +1,20 @@
 package de.mehrwerk.octopus.axa.model.cases.home;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
  * Represents the personal details of a policyholder
  */
 @Getter
+@Setter
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PolicyHolderPersonalDto extends AbstractPolicyHolderDto {
     /**
      * <p>States if the policyholder is the property owner:

@@ -1,6 +1,7 @@
 package de.mehrwerk.octopus.axa.model.cases.home;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -15,6 +16,7 @@ import java.time.OffsetDateTime;
  */
 @Data
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AppointmentProposalsDto {
     /**
      * <p>Starting datetime of the proposed appointment. UTC datetime, RFC3339 format (YYYY-MM-DDTHH:mm:ssZ).<br/>

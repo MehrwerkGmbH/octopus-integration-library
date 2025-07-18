@@ -1,6 +1,8 @@
 package de.mehrwerk.octopus.axa.model.cases.home;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
@@ -10,6 +12,8 @@ import lombok.experimental.Accessors;
  * {@link PolicyHolderPersonalDto}
  */
 @Getter
+@Setter
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class AbstractPolicyHolderDto {
 }

@@ -1,5 +1,6 @@
 package de.mehrwerk.octopus.axa.model.cases.home;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.mehrwerk.octopus.axa.jackson.deserializer.QuestionsAndAnswersDeserializer;
@@ -23,6 +24,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Accessors(chain = true)
 @JsonDeserialize(using = QuestionsAndAnswersDeserializer.class)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class AbstractQuestionsAndAnswersDto {
     /**
      * <p>Identifier of the question</p>
