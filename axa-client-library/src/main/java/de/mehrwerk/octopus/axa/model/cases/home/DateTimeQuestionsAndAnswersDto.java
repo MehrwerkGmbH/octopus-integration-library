@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.time.OffsetDateTime;
@@ -15,6 +16,7 @@ import java.time.OffsetDateTime;
  * <p>This class extends {@link AbstractQuestionsAndAnswersDto} and provides a specific implementation for datetime questions.</p>
  */
 @Getter
+@Setter
 @Accessors(chain = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DateTimeQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto {

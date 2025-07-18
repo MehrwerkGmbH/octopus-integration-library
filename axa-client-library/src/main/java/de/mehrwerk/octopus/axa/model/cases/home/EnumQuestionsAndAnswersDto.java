@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
  * <p>This class extends {@link AbstractQuestionsAndAnswersDto} and provides a specific implementation for enum questions.</p>
  */
 @Getter
+@Setter
 @Accessors(chain = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class EnumQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto {

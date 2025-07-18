@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
@@ -11,6 +12,7 @@ import lombok.experimental.Accessors;
  * <p>This class extends {@link AbstractQuestionsAndAnswersDto} and provides a specific implementation for boolean questions.</p>
  */
 @Getter
+@Setter
 @Accessors(chain = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BooleanQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto {
