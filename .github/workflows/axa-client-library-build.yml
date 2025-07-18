@@ -5,6 +5,9 @@ on:
   workflow_dispatch:
 
   push:
+    paths:
+      - 'axa-client-library/**'
+      - 'pom.xml'
     branches: [ "master" ]
 
 jobs:
