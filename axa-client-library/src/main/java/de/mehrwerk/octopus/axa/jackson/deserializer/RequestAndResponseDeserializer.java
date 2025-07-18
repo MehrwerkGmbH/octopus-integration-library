@@ -1,7 +1,10 @@
 package de.mehrwerk.octopus.axa.jackson.deserializer;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import de.mehrwerk.octopus.axa.model.cases.home.AbstractHomeCaseDto;
 import de.mehrwerk.octopus.axa.model.cases.home.HomeCaseRequestDto;
 import de.mehrwerk.octopus.axa.model.cases.home.HomeCaseResponseDto;
@@ -13,12 +16,10 @@ import java.io.IOException;
  * based on the presence of specific fields in the JSON.
  */
 public class RequestAndResponseDeserializer extends JsonDeserializer<AbstractHomeCaseDto> {
-    private static final ObjectMapper mapper = new ObjectMapper()
-            .setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
-
     @Override
     public AbstractHomeCaseDto deserialize(JsonParser p, DeserializationContext ctxt)
             throws IOException {
+        ObjectMapper mapper = (ObjectMapper) p.getCodec();
         JsonNode node = p.getCodec().readTree(p);
 
         if (node.isTextual()) {

@@ -12,17 +12,11 @@ import java.io.IOException;
  * Custom deserializer for {@link AbstractPolicyHolderDto} to handle different policyholder types based on the presence of specific fields.
  */
 public class PolicyHolderDeserializer extends JsonDeserializer<AbstractPolicyHolderDto> {
-    private static final ObjectMapper mapper = new ObjectMapper()
-            .setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
-
     @Override
     public AbstractPolicyHolderDto deserialize(JsonParser p, DeserializationContext ctxt)
             throws IOException {
+        ObjectMapper mapper = (ObjectMapper) p.getCodec();
         JsonNode node = p.getCodec().readTree(p);
-
-        if (node.isTextual()) {
-            node = mapper.readTree(node.asText());
-        }
 
         if (node.has("company_legal_name") || node.has("company_registration")) {
             return mapper.treeToValue(node, PolicyHolderCompanyDto.class);
