@@ -121,8 +121,7 @@ public class AxaTokenClient {
             log.debug("Refreshing JWT token for AXA API");
 
             Map<String, String> authRequest = Map.of(
-                    "username", username,
-                    "password", password
+                    "grant_type", "client_credentials"
             );
 
             JwtTokenResponse tokenResponse = authRestClient.post()
