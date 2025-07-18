@@ -1,0 +1,8 @@
+axa:
+  api:
+    token-endpoint: "/oauth/token"
+    auth-base-url: "https://auth-stg.api.axapartners.com"
+    api-base-url: "https://api-test.axa-assistance.com"
+    token-refresh-buffer: 60
+    connect-timeout: 30
+    read-timeout: 20
