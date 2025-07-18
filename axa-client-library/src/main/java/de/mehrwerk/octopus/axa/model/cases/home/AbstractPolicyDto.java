@@ -28,5 +28,5 @@ public abstract class AbstractPolicyDto {
     @JsonDeserialize(using = PolicyHolderDeserializer.class)
     @JsonProperty("policy_holder")
     @Valid
-    public AbstractPolicyHolderDto policyHolder;
+    private AbstractPolicyHolderDto policyHolder;
 }

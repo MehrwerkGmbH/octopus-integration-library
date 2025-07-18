@@ -21,12 +21,12 @@ public class AmountQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto
      */
     @JsonProperty("question_type")
     @NotBlank
-    public String questionType = "MONETARY_AMOUNT";
+    private String questionType = "MONETARY_AMOUNT";
     /**
      * <p>Answered monitary amount</p>
      */
     @JsonProperty("answered_amount")
     @NotNull
     @Valid
-    public AnsweredAmountDto answeredAmount;
+    private AnsweredAmountDto answeredAmount;
 }

@@ -24,7 +24,7 @@ public class EnumQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto {
      */
     @JsonProperty("question_type")
     @NotBlank
-    public String questionType = "ENUM";
+    private String questionType = "ENUM";
     /**
      * <p>List of the answers</p>
      * <p>Contains a list of {@link EnumerationAnswersDto} objects, which represent the possible answers to the enum question.</p>
@@ -33,5 +33,5 @@ public class EnumQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto {
     @Valid
     @NotNull
     @Size(min = 1, max = 20)
-    public List<EnumerationAnswersDto> enumerationAnswers;
+    private List<EnumerationAnswersDto> enumerationAnswers;
 }

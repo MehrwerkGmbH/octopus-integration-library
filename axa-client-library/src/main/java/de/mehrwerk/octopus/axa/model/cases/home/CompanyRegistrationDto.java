@@ -21,14 +21,14 @@ public class CompanyRegistrationDto {
      */
     @JsonProperty("registration_type")
     @Size(max = 150)
-    public RegistrationType registrationType;
+    private RegistrationType registrationType;
     /**
      * <p>Value of the identifier</p>
      */
     @JsonProperty("value")
     @Size(max = 20)
     @NotBlank
-    public String value;
+    private String value;
 
     /**
      * <p>Registration type</p>

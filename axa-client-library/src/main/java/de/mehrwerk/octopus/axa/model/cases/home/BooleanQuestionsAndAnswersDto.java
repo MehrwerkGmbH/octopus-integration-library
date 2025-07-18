@@ -19,11 +19,11 @@ public class BooleanQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDt
      */
     @JsonProperty("question_type")
     @NotBlank
-    public String questionType = "BOOLEAN";
+    private String questionType = "BOOLEAN";
     /**
      * <p>Answered boolean</p>
      */
     @JsonProperty("answered_boolean")
     @NotBlank
-    public Boolean answeredBoolean;
+    private Boolean answeredBoolean;
 }

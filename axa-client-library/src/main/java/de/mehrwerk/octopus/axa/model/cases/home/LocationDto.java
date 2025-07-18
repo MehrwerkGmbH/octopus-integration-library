@@ -21,11 +21,11 @@ public class LocationDto {
     @JsonProperty("address")
     @NotNull
     @Valid
-    public AddressDto address;
+    private AddressDto address;
     /**
      * <p>Additional information about the location</p>
      */
     @JsonProperty("additional_information")
     @Size(max = 2000)
-    public String additionalInformation;
+    private String additionalInformation;
 }

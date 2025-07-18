@@ -21,7 +21,7 @@ public class IncidentDto {
     @JsonProperty("cause")
     @NotNull
     @Valid
-    public CauseDto cause;
+    private CauseDto cause;
     /**
      * <p>Date-time at which the incident occurred.</p>
      * <p>Format: ISO 8601 <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></p>
@@ -29,25 +29,25 @@ public class IncidentDto {
     @JsonProperty("occurred_at")
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
-    public OffsetDateTime occurredAt;
+    private OffsetDateTime occurredAt;
     /**
      * <p>Location where the incident happened</p>
      */
     @JsonProperty("location")
     @NotNull
     @Valid
-    public LocationDto location;
+    private LocationDto location;
     /**
      * <p>Incident description</p>
      */
     @JsonProperty("description")
     @Size(max = 2000)
-    public String description;
+    private String description;
     /**
      * <p>Define who is responsible from the insurance point of view Possible values:</p>
      */
     @JsonProperty("insurance_accountability")
-    public InsuranceAccountability insuranceAccountability;
+    private InsuranceAccountability insuranceAccountability;
 
     /**
      * <p>ACCOUNTABLE: From the insurance perspective, the policyholder is accountable of the incident (e.g. key broke in the lock, broken sink...)<br/>

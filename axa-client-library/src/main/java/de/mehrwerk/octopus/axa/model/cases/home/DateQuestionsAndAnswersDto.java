@@ -23,7 +23,7 @@ public class DateQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto {
      */
     @JsonProperty("question_type")
     @NotBlank
-    public String questionType = "DATE";
+    private String questionType = "DATE";
     /**
      * <p>Answered date. ISO 8601 format (YYYY-MM-DD)<br/>
      * <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></p>
@@ -31,5 +31,5 @@ public class DateQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto {
     @JsonProperty("answered_date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @NotNull
-    public LocalDate answeredDate;
+    private LocalDate answeredDate;
 }

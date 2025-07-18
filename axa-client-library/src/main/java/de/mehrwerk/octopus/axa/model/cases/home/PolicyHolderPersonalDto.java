@@ -23,29 +23,29 @@ public class PolicyHolderPersonalDto extends AbstractPolicyHolderDto {
      * false: the policyholder is the tenant.</p>
      */
     @JsonProperty("is_property_owner")
-    public Boolean isPropertyOwner;
+    private Boolean isPropertyOwner;
     /**
      * <p>First name of the policyholder</p>
      */
     @JsonProperty("first_name")
     @Size(max = 100)
-    public String firstName;
+    private String firstName;
     /**
      * <p>Last name of the policyholder</p>
      */
     @JsonProperty("last_name")
     @Size(max = 100)
-    public String lastName;
+    private String lastName;
     /**
      * <p>Address postal code of the policyholder</p>
      */
     @JsonProperty("address_postal_code")
     @Size(max = 20)
-    public String addressPostalCode;
+    private String addressPostalCode;
     /**
      * <p>Registration of the policyholder</p>
      */
     @JsonProperty("person_registration")
     @Valid
-    public PersonRegistrationDto personRegistration;
+    private PersonRegistrationDto personRegistration;
 }

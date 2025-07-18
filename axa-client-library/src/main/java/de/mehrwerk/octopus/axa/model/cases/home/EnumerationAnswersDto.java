@@ -20,14 +20,14 @@ public class EnumerationAnswersDto {
     @JsonProperty("answer_id")
     @Size(max = 150)
     @NotBlank
-    public String answerId;
+    private String answerId;
     /**
      * <p>The text of the answer to be displayed to the user</p>
      */
     @JsonProperty("answer_text")
     @Size(max = 100)
     @NotBlank
-    public String answerText;
+    private String answerText;
     /**
      * <p>Indicates if the answer was selected by the reporter:
      * <p>
@@ -35,5 +35,5 @@ public class EnumerationAnswersDto {
      * false: the answer wasn't selected by the reporter.</p>
      */
     @JsonProperty("is_selected")
-    public Boolean isSelected = false;
+    private Boolean isSelected = false;
 }

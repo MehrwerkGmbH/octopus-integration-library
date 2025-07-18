@@ -21,14 +21,14 @@ public class TextQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto {
      */
     @JsonProperty("question_type")
     @NotNull
-    public QuestionTypeEnum questionType;
+    private QuestionTypeEnum questionType;
     /**
      * <p>Text of the answer</p>
      */
     @JsonProperty("answered_text")
     @NotBlank
     @Size(max = 2000)
-    public String answeredText;
+    private String answeredText;
 
     /**
      * <p>Location or String</p>

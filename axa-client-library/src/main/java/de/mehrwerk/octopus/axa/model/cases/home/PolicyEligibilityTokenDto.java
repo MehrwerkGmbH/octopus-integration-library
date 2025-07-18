@@ -23,12 +23,12 @@ public class PolicyEligibilityTokenDto extends AbstractPolicyDto {
     @JsonProperty("policy_id")
     @Size(max = 150)
     @NotBlank
-    public String policyId;
+    private String policyId;
     /**
      * <p>Token that proves that the contact is eligible to the claim creation</p>
      */
     @JsonProperty("eligibility_token")
     @Size(max = 2000)
     @NotBlank
-    public String eligibilityToken;
+    private String eligibilityToken;
 }

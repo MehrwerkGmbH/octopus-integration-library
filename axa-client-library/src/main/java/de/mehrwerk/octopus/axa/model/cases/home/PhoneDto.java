@@ -19,12 +19,12 @@ public class PhoneDto {
      */
     @JsonProperty("international_prefix")
     @Size(max = 5)
-    public String internationalPrefix;
+    private String internationalPrefix;
     /**
      * <p>Phone number</p>
      */
     @JsonProperty("number")
     @Size(max = 20)
     @NotBlank
-    public String number;
+    private String number;
 }

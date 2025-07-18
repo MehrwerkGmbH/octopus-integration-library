@@ -22,7 +22,7 @@ public class PolicyPartnerIdDto extends AbstractPolicyDto {
      */
     @JsonProperty("external_policy_number")
     @Size(max = 150)
-    public String externalPolicyNumber;
+    private String externalPolicyNumber;
     /**
      * <p>Identifier of the partner.
      * N.B. The access to a specific partner is made by configuration per OAuth2 application. In case the OAuth2 application is not allowed to access the specified partner, the request will be rejected.
@@ -31,11 +31,11 @@ public class PolicyPartnerIdDto extends AbstractPolicyDto {
     @JsonProperty("partner_id")
     @Size(max = 150)
     @NotBlank
-    public String partnerId;
+    private String partnerId;
     /**
      * <p>Identifier of the package</p>
      */
     @JsonProperty("package_id")
     @Size(max = 150)
-    public String packageId;
+    private String packageId;
 }

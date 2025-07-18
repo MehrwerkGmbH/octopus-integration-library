@@ -20,14 +20,14 @@ public class PersonRegistrationDto {
      */
     @JsonProperty("registration_type")
     @NotNull
-    public RegistrationType registrationType;
+    private RegistrationType registrationType;
     /**
      * <p>Value of the registration</p>
      */
     @JsonProperty("value")
     @Size(max = 20)
     @NotBlank
-    public String value;
+    private String value;
 
     /**
      * <p>Registration type</p>

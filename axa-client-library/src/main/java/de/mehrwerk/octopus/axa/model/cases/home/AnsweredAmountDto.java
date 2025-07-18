@@ -24,7 +24,7 @@ public class AnsweredAmountDto {
     @JsonProperty("value")
     @NotNull
     @DecimalScale(allowedScales = {2, 3})
-    public BigDecimal value;
+    private BigDecimal value;
     /**
      * <p>Currency of the amount. ISO 4217 format (3-letter code)<br/>
      * <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a></p>
@@ -32,5 +32,5 @@ public class AnsweredAmountDto {
     @JsonProperty("currency")
     @Size(min = 3, max = 3)
     @NotBlank
-    public String currency;
+    private String currency;
 }

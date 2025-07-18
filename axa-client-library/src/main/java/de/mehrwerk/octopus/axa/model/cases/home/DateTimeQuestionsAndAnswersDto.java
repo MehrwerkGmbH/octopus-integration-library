@@ -23,7 +23,7 @@ public class DateTimeQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersD
      */
     @JsonProperty("question_type")
     @NotBlank
-    public String questionType = "DATE_TIME";
+    private String questionType = "DATE_TIME";
     /**
      * <p>Answered date-time.
      * <p>
@@ -33,5 +33,5 @@ public class DateTimeQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersD
     @JsonProperty("answered_date_time")
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
-    public OffsetDateTime answeredDateTime;
+    private OffsetDateTime answeredDateTime;
 }

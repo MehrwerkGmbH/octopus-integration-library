@@ -21,12 +21,12 @@ public class NumberQuestionsAndAnswersDto extends AbstractQuestionsAndAnswersDto
      */
     @JsonProperty("question_type")
     @NotBlank
-    public String questionType = "NUMBER";
+    private String questionType = "NUMBER";
     /**
      * <p>Answered number</p>
      */
     @JsonProperty("answered_number")
     @NotNull
     @Valid
-    public Integer answeredNumber;
+    private Integer answeredNumber;
 }

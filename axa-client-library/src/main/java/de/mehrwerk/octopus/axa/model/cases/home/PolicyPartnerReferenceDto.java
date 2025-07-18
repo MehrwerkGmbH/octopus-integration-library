@@ -21,7 +21,7 @@ public class PolicyPartnerReferenceDto extends AbstractPolicyDto {
      */
     @JsonProperty("external_policy_number")
     @Size(max = 150)
-    public String externalPolicyNumber;
+    private String externalPolicyNumber;
     /**
      * <p>Reference of the partner.
      * <p>
@@ -30,11 +30,11 @@ public class PolicyPartnerReferenceDto extends AbstractPolicyDto {
      */
     @JsonProperty("partner_reference")
     @Size(max = 50)
-    public String partnerReference;
+    private String partnerReference;
     /**
      * <p>Identifier of the package</p>
      */
     @JsonProperty("package_id")
     @Size(max = 150)
-    public String packageId;
+    private String packageId;
 }

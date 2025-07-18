@@ -25,7 +25,7 @@ public class AppointmentProposalsDto {
     @JsonProperty("start_at")
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
-    public OffsetDateTime startAt;
+    private OffsetDateTime startAt;
     /**
      * <p>Ending datetime of the proposed appointment. UTC datetime, RFC3339 format (YYYY-MM-DDTHH:mm:ssZ).<br/>
      * <a href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a></p>
@@ -33,12 +33,12 @@ public class AppointmentProposalsDto {
     @JsonProperty("end_at")
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
-    public OffsetDateTime endAt;
+    private OffsetDateTime endAt;
     /**
      * <p>The contact preferred appointment order. Lower number, higher preference</p>
      */
     @JsonProperty("preferred_order")
     @Min(1)
     @Max(20)
-    public Integer preferredOrder;
+    private Integer preferredOrder;
 }

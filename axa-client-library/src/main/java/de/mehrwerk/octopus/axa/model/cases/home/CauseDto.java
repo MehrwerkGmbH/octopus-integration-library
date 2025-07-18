@@ -20,11 +20,11 @@ public class CauseDto {
     @JsonProperty("code")
     @Size(max = 100)
     @NotBlank
-    public String code;
+    private String code;
     /**
      * <p>Breakdown diagnostic description</p>
      */
     @JsonProperty("description")
     @Size(max = 255)
-    public String description;
+    private String description;
 }

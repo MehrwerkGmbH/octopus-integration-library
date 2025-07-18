@@ -24,12 +24,12 @@ public class PolicyHolderCompanyDto extends AbstractPolicyHolderDto {
     @JsonProperty("company_legal_name")
     @Size(max = 150)
     @NotBlank
-    public String companyLegalName;
+    private String companyLegalName;
     /**
      * <p>Registration of the policyholder</p>
      */
     @JsonProperty("company_registration")
     @Valid
     @NotNull
-    public CompanyRegistrationDto companyRegistration;
+    private CompanyRegistrationDto companyRegistration;
 }

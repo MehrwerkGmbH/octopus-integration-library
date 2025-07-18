@@ -25,26 +25,26 @@ public class HomeCaseResponseDto extends AbstractHomeCaseDto {
     @JsonProperty("case_id")
     @Size(max = 150)
     @NotBlank
-    public String caseId;
+    private String caseId;
     /**
      * <p>Short and readable identifier of the case</p>
      */
     @JsonProperty("case_reference")
     @Size(max = 20)
     @NotBlank
-    public String caseReference;
+    private String caseReference;
     /**
      * <p>Status of the case:
      */
     @JsonProperty("status")
     @NotNull
-    public Status status;
+    private Status status;
     /**
      * <p>Reason why the case is excluded. This field must be present only if $status equals "EXCLUDED"</p>
      */
     @JsonProperty("exclusion_reason")
     @Size(max = 2000)
-    public String exclusionReason;
+    private String exclusionReason;
 
     /**
      * <p>

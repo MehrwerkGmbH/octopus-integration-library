@@ -21,5 +21,5 @@ public class SpecialRequirementDto {
      */
     @JsonProperty("has_requested_check_up")
     @NotNull
-    public Boolean hasRequestedCheckUp;
+    private Boolean hasRequestedCheckUp;
 }
