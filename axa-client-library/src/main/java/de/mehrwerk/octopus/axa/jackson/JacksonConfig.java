@@ -6,6 +6,9 @@ import de.mehrwerk.octopus.axa.jackson.module.RequestAndResponseModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuration class for setting up custom Jackson ObjectMapper.
+ */
 @Configuration
 public class JacksonConfig {
     @Bean
